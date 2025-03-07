@@ -2,6 +2,7 @@ const myLibrary = [];
 
 function Book (title) {
     this.title = title;
+    this.id = crypto.randomUUID()
 }
 
 function addBookToLibrary(a) {
@@ -11,5 +12,7 @@ function addBookToLibrary(a) {
 
 addBookToLibrary("Roma")
 addBookToLibrary("Milo")
+addBookToLibrary("Roma")
 
 console.log(myLibrary)
+
