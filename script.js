@@ -1,7 +1,10 @@
 const myLibrary = [];
 
-function Book (title) {
+function Book (title, author, pages, read) {
     this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
     this.id = crypto.randomUUID()
 }
 
@@ -10,9 +13,16 @@ function addBookToLibrary(a) {
     myLibrary.push(name.title);
 }
 
-addBookToLibrary("Roma")
-addBookToLibrary("Milo")
-addBookToLibrary("Roma")
+const Roma = new Book("Roma", "Dog", "100 pages", "Yes")
+const Milo = new Book("Milo", "Dog", "100 pages", "Yes")
+
+console.log(Roma)
+console.log(Milo)
+
+addBookToLibrary(Roma)
+addBookToLibrary(Milo)
 
 console.log(myLibrary)
 
+console.log(myLibrary[0].title)
+console.log(myLibrary[1].title)
