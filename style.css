@@ -9,12 +9,17 @@ body {
 
 .header{
     margin-left: 5px;
-    min-width: 100%;
-    display: flex;
-    flex: 1;
+    margin-right: 5px;   
+    min-width: 95%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    
 }
 
 button{
+    width: 15em;
+    margin-right: 3em;
 }
 
 .main{
