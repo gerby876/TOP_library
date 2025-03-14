@@ -11,25 +11,38 @@ function Book (title, author, pages, read) {
 function addBookToLibrary(a) {
     const name = new Book(a);
     myLibrary.push(name.title);
-    const card =  document.createElement("div")
-    card.classList.add("card")
-    main.appendChild(card)
+    const card =  document.createElement("div");
+    card.classList.add("card");
+    main.appendChild(card);
+    const title = document.createElement("div");
+    title.innerHTML = "Title: " + JSON.stringify(myLibrary[myLibrary.length-1].title);
+    const author = document.createElement("div");
+    author.innerHTML = "author: " + JSON.stringify(myLibrary[myLibrary.length-1].author);
+    const pages = document.createElement("div");
+    pages.innerHTML = "Number of pages: " + JSON.stringify(myLibrary[myLibrary.length-1].pages);
+    const read = document.createElement("div");
+    read.innerHTML = "Finished: " + JSON.stringify(myLibrary[myLibrary.length-1].read);
+    console.log(myLibrary[myLibrary.length-1]);
+    card.appendChild(title);
+    card.appendChild(author);
+    card.appendChild(pages);
+    card.appendChild(read);
 }
 
-main = document.querySelector(".main")
+main = document.querySelector(".main");
 
-const Roma = new Book("Roma", "Dog", "100 pages", "Yes")
-const Milo = new Book("Milo", "Dog", "100 pages", "Yes")
+const Roma = new Book("Roma", "Dog", "100", "Yes");
+const Milo = new Book("Milo", "Dog", "100", "Yes");
 
-console.log(Roma)
-console.log(Milo)
+console.log(Roma);
+console.log(Milo);
 
-addBookToLibrary(Roma)
-addBookToLibrary(Milo)
+addBookToLibrary(Roma);
+addBookToLibrary(Milo);
 
-console.log(myLibrary)
+console.log(myLibrary);
 
-console.log(myLibrary[0].title)
-console.log(myLibrary[1].title)
+console.log(myLibrary[0].title);
+console.log(myLibrary[1].title);
 
 
