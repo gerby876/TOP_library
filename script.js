@@ -11,9 +11,11 @@ function Book (title, author, pages, read) {
 function addBookToLibrary(a) {
     const name = new Book(a);
     myLibrary.push(name.title);
+    
     const card =  document.createElement("div");
     card.classList.add("card");
     main.appendChild(card);
+
     const title = document.createElement("div");
     title.innerHTML = "Title: " + JSON.stringify(myLibrary[myLibrary.length-1].title);
     const author = document.createElement("div");
@@ -27,6 +29,12 @@ function addBookToLibrary(a) {
     card.appendChild(author);
     card.appendChild(pages);
     card.appendChild(read);
+
+    const remove = document.createElement("button");
+    remove.addEventListener("click", () =>
+        main.removeChild(card)
+    );
+    card.appendChild(remove)
 }
 
 main = document.querySelector(".main");
@@ -34,11 +42,13 @@ main = document.querySelector(".main");
 const Roma = new Book("Roma", "Dog", "100", "Yes");
 const Milo = new Book("Milo", "Dog", "100", "Yes");
 
+
 console.log(Roma);
 console.log(Milo);
 
 addBookToLibrary(Roma);
 addBookToLibrary(Milo);
+
 
 console.log(myLibrary);
 
