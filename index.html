@@ -9,14 +9,17 @@
 <body>
     <div class="container">
         <div class="header">
+            <dialog>
                 <div>Title: <input id= "name" type="text"></div>
                 <div>Author:<input id="writer" type="text"></div>
                 <div>Number of Pages:<input id="length" type="text"></div>
                 <div>Read: <select id="finished" name="yn">
-                    <option value="no"> No </option>
-                    <option value="yes"> Yes </option>
-                </select>
+                        <option value="no"> No </option>
+                        <option value="yes"> Yes </option>
+                    </select>
                 </div>
+                <button id="submit"> Add </button>
+            </dialog>
                 <button id="add"> Add Book </button>
         </div>
         <div class="main">

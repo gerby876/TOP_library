@@ -61,18 +61,26 @@ function addBookToLibrary(a) {
 }
 
 main = document.querySelector(".main");
+
+dialog = document.querySelector("dialog");
 const add = document.getElementById("add");
+const submit = document.getElementById("submit");
 
 add.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+submit.addEventListener("click", () => {
     if(document.getElementById("name").value == "" || document.getElementById("writer").value == "" || document.getElementById("length").value == "") {
         alert("Please fill out all fields.");
     } else {
     const next = new Book(document.getElementById("name").value, document.getElementById("writer").value, document.getElementById("length").value, document.getElementById("finished".value));
     addBookToLibrary(next);
-}
+    dialog.close();
+    };
 });
 
-console.log(typeof(document.getElementById("finished").value))
+
 
 
 
