@@ -4,13 +4,12 @@ function Book (title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
-    this.id = crypto.randomUUID()
+    this.read = document.getElementById("finished").value.charAt(0).toUpperCase() + document.getElementById("finished").value.slice(1);;
+    this.id = crypto.randomUUID();
 }
 
 function addBookToLibrary(a) {
-    const name = new Book(a);
-    myLibrary.push(name.title);
+    myLibrary.push(a);
     
     const card =  document.createElement("div");
     card.classList.add("card");
@@ -62,21 +61,18 @@ function addBookToLibrary(a) {
 }
 
 main = document.querySelector(".main");
+const add = document.getElementById("add");
 
-const Roma = new Book("Roma", "Dog", "100", "Yes");
-const Milo = new Book("Milo", "Dog", "100", "Yes");
-const Nora = new Book("Nora", "Dog", "100", "Yes");
+add.addEventListener("click", () => {
+    if(document.getElementById("name").value == "" || document.getElementById("writer").value == "" || document.getElementById("length").value == "") {
+        alert("Please fill out all fields.");
+    } else {
+    const next = new Book(document.getElementById("name").value, document.getElementById("writer").value, document.getElementById("length").value, document.getElementById("finished".value));
+    addBookToLibrary(next);
+}
+});
 
+console.log(typeof(document.getElementById("finished").value))
 
-addBookToLibrary(Roma);
-addBookToLibrary(Milo);
-addBookToLibrary(Nora);
-
-
-
-console.log(myLibrary);
-
-console.log(myLibrary[0].title);
-console.log(myLibrary[1].title);
 
 
