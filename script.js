@@ -30,8 +30,13 @@ function addBookToLibrary(a) {
 
     const id = myLibrary[myLibrary.length-1].id;
 
+    const bottom = document.createElement("div");
+    bottom.classList.add("bottom");
+    card.appendChild(bottom)
+
     const finished = document.createElement("button");
     finished.textContent = "Finished";
+    finished.classList.add("cbutton");
     finished.addEventListener("click", () => {
         for (i=0; i<myLibrary.length; i++) {
             if (myLibrary[i].id == id) {
@@ -45,10 +50,11 @@ function addBookToLibrary(a) {
             };
         }
     });
-    card.appendChild(finished);
+    bottom.appendChild(finished);
 
     const remove = document.createElement("button");
     remove.textContent = "Delete";
+    remove.classList.add("cbutton");
     remove.addEventListener("click", () => {
             main.removeChild(card);
                 for (i=0; i<myLibrary.length; i++) {
@@ -57,7 +63,7 @@ function addBookToLibrary(a) {
                 };
             };
     });
-    card.appendChild(remove);
+    bottom.appendChild(remove);
 }
 
 main = document.querySelector(".main");
@@ -81,8 +87,5 @@ submit.addEventListener("click", () => {
     dialog.close();
     };
 });
-
-
-
 
 

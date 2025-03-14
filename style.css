@@ -19,24 +19,39 @@ body {
 
 button{
     width: 15em;
-    margin-right: 3em;
 }
 
 .main{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-    grid-auto-rows: minmax(200px, 200px);
+    grid-auto-rows: minmax(150px, 150px);
     margin: 2px;
     
 }
 
 .card{
+    font-size: large;
     margin: 2px;
     background-color: white;
     border-radius: 8px;
-    /* display: flex;
+    display: flex;
     flex: 1;
-    flex-direction: column; */
+    flex-direction: column;
     border: solid;
     border-color: blue;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.bottom{
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.cbutton{
+    height:1.5rem;
+    width:50%;
+    /* margin-bottom: 1rem; */
 }
