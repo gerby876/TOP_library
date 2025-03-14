@@ -73,6 +73,8 @@ add.addEventListener("click", () => {
 submit.addEventListener("click", () => {
     if(document.getElementById("name").value == "" || document.getElementById("writer").value == "" || document.getElementById("length").value == "") {
         alert("Please fill out all fields.");
+    } else if (document.getElementById("length").value<1) {
+        alert("Please enter a page number of 1 or more.")
     } else {
     const next = new Book(document.getElementById("name").value, document.getElementById("writer").value, document.getElementById("length").value, document.getElementById("finished".value));
     addBookToLibrary(next);
