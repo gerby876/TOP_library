@@ -24,15 +24,22 @@ function addBookToLibrary(a) {
     pages.innerHTML = "Number of pages: " + JSON.stringify(myLibrary[myLibrary.length-1].pages);
     const read = document.createElement("div");
     read.innerHTML = "Finished: " + JSON.stringify(myLibrary[myLibrary.length-1].read);
-    console.log(myLibrary[myLibrary.length-1]);
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
     card.appendChild(read);
 
+    const id = myLibrary[myLibrary.length-1].id;
+
     const remove = document.createElement("button");
-    remove.addEventListener("click", () =>
-        main.removeChild(card)
+    remove.addEventListener("click", () => {
+        main.removeChild(card);
+        for (i=0; i<myLibrary.length; i++) {
+            if (myLibrary[i].id == id) {
+                myLibrary.splice(i, 1);
+            }
+        }
+    }
     );
     card.appendChild(remove)
 }
@@ -41,13 +48,13 @@ main = document.querySelector(".main");
 
 const Roma = new Book("Roma", "Dog", "100", "Yes");
 const Milo = new Book("Milo", "Dog", "100", "Yes");
+const Nora = new Book("Nora", "Dog", "100", "Yes");
 
-
-console.log(Roma);
-console.log(Milo);
 
 addBookToLibrary(Roma);
 addBookToLibrary(Milo);
+addBookToLibrary(Nora);
+
 
 
 console.log(myLibrary);
