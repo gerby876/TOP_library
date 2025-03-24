@@ -1,12 +1,12 @@
 const myLibrary = [];
 
-function Book (title, author, pages, read) {
+ class Book { constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = document.getElementById("finished").value.charAt(0).toUpperCase() + document.getElementById("finished").value.slice(1);;
     this.id = crypto.randomUUID();
-}
+}};
 
 function addBookToLibrary(a) {
     myLibrary.push(a);
